@@ -12,17 +12,19 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <div class="container mt-5">
-        <a href="index.php" class="btn btn-secondary mb-3">Back to Boards</a>
+
+<div class="container mt-5">
         <div class="row" id="card-container">
-            <!-- Cards will be populated here -->
+           
         </div>
     </div>
 
-    <!-- Add Card Button -->
+
+
     <button class="add-card-btn" id="add-card"><i class="fas fa-plus"></i></button>
     <button class="auto-arrange-btn" id="auto-arrange"><i class="fas fa-layer-group"></i></button>
     <button class="clean-btn" id="clean"><i class="fas fa-broom"></i></button>
+	<button class="home-btn" id="back-to-boards" onclick="window.location.href='index.php'"><i class="fas fa-house"></i></button>
     <button class="menu-btn" id="menu-toggle"><i class="fas fa-bars"></i></button>
 
     <!-- Modals -->
@@ -48,7 +50,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-primary" id="saveCardName">Save</button>
                 </div>
             </div>
@@ -64,6 +66,14 @@
 
     <script>
         const boardId = new URLSearchParams(window.location.search).get('id');
+		if (boardId) {
+    $.get(`boards_handler.php?id=${boardId}`, function(board) {
+        if (board && board.name) {
+            $("#event-title").text(board.name);
+        }
+    });
+}
+
     </script>
     <script src="js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

@@ -8,11 +8,11 @@ body, html {
         }
 .menu-btn {
     position: fixed;
-    bottom: 20px; /* Bottommost button */
+    bottom: 20px; /* Bottommost */
     right: 20px;
     width: 50px;
     height: 50px;
-    background-color: #007bff; /* Initial blue color */
+    background-color: #007bff;
     color: white;
     border-radius: 50%;
     display: flex;
@@ -24,18 +24,41 @@ body, html {
     font-size: 20px;
     z-index: 999;
 }
-
 .menu-btn.active {
-    background-color: grey; /* Grey when active */
+    background-color: grey;
 }
 
-.add-card-btn {
+.home-btn {
     position: fixed;
-    bottom: 185px; /* 5px gap from menu-btn */
+    bottom: 75px; /* 55px above the menu button */
     right: 20px;
     width: 50px;
     height: 50px;
-    background-color: #28a745;
+    background-color: #6c757d; /* Gray color */
+    color: white;
+    border-radius: 50%;
+    display: none; /* Hidden by default */
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 1000;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.home-btn:hover {
+    background-color: #5a6268;
+    transform: scale(1.05);
+}
+
+.clean-btn {
+    position: fixed;
+    bottom: 130px; /* 55px gap from home-btn */
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #dc3545;
     color: white;
     border-radius: 50%;
     display: none;
@@ -50,7 +73,7 @@ body, html {
 
 .auto-arrange-btn {
     position: fixed;
-    bottom: 130px; /* 5px gap from add-card-btn */
+    bottom: 185px; /* 55px gap from clean-btn */
     right: 20px;
     width: 50px;
     height: 50px;
@@ -67,13 +90,13 @@ body, html {
     z-index: 1000;
 }
 
-.clean-btn {
+.add-card-btn {
     position: fixed;
-    bottom: 75px; /* 5px gap from auto-arrange-btn */
+    bottom: 240px; /* 55px gap from auto-arrange-btn */
     right: 20px;
     width: 50px;
     height: 50px;
-    background-color: #dc3545;
+    background-color: #28a745;
     color: white;
     border-radius: 50%;
     display: none;
@@ -85,6 +108,8 @@ body, html {
     font-size: 20px;
     z-index: 1000;
 }
+
+
 
 
         .options-menu {
@@ -131,6 +156,3 @@ body, html {
     box-sizing: border-box;
     transition: transform 0.3s ease; /* Optional transition for interaction */
 }
-
-/* Optional: Hover effect for cards */
-

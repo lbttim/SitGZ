@@ -93,15 +93,16 @@ $(function() {
         saveCardData();
     });
 	$('#menu-toggle').click(function() {
-		$(this).toggleClass('active');
-		if ($(this).hasClass('active')) {
-			$(this).html('<i class="fas fa-arrow-left"></i>');
-			$('#add-card, #auto-arrange, #clean').fadeIn();
-		} else {
-			$(this).html('<i class="fas fa-bars"></i>');
-			$('#add-card, #auto-arrange, #clean').fadeOut();
-		}
-	});
+    $(this).toggleClass('active');
+    if ($(this).hasClass('active')) {
+        $(this).html('<i class="fas fa-arrow-left"></i>');
+        $('#add-card, #back-to-boards, #auto-arrange, #clean').fadeIn();
+    } else {
+        $(this).html('<i class="fas fa-bars"></i>');
+        $('#add-card, #back-to-boards, #auto-arrange, #clean').fadeOut();
+    }
+});
+
 	function toggleLock(card) {
 		const isLocked = card.hasClass("locked");
 
